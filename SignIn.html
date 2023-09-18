@@ -8,7 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<style>
+    /* .prevButtton{
+  color: black !important;
+  width: 5vw;
+} */
+</style>
 
 <body>
     <div class="container-fluid p-4 bg-light">
@@ -21,9 +28,16 @@
                 </div>
             </div>
             <div class="col-md-8">
-                
+                <div id="backButton" style="display: none;">
+                    <button class="prev0Buttton" onclick="prevFunction()">
+                        <i style="font-size:24px ; color: black;" class="fa">&#xf112;</i></button>
+                </div>
+                <div id="nextButton">
+                    <button class="prev0Buttton" onclick="prevFunction()">
+                        <i style="font-size:24px ; color: black;" class="fa">&#xf064;</i></button>
+                </div>
                 <form class="mt-5 p-5">
-                    <div id="formDiv">
+                    <div id="signUpFormDiv">
                         <div>
                             <h4>Sign Up Form</h4>
                         </div>
@@ -54,25 +68,77 @@
                         </div>
 
                         <div class="mt-5 w-100">
-                            <button onclick="handleSbmit()" class="btn btn-dark w-100">Create Account</button>
+                            <button onclick="handleSbmit()" class="btn btn-dark submitButton w-100">Create
+                                Account</button>
                         </div>
                         <div class="mt-2 text-center">
                             <span>
                                 Alredy have an account?
                             </span>
-                            <span><a href="sigin.html">SignIn</a></span>
+                            <span><a class="signUpAnTag" onclick="prevFunction()">SignIn</a></span>
                         </div>
                     </div>
-                </form>
+                    <div id="signInFormDiv" style="display: none;">
+                        <div>
+                            <h4>SignIn Form</h4>
+                        </div>
+                       
+                        <div class="mt-4">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control inputField" id="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mt-4">
+                            <label for="password">Password</label>
+                            <input placeholder="6+ characters" type="password" class="passplac form-control inputField"
+                                id="password">
+                        </div>
+                        <div class="form-check mt-5 curser-pointer">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox">
+                            <label class="form-check-label" for="checkbox" id="t_c">
+                                Term & Condition
+                            </label>
+                        </div>
+
+                        <div class="mt-5 w-100">
+                            <button onclick="handleSbmit()" class="btn btn-dark submitButton w-100">Submit</button>
+                        </div>
+                        <div class="mt-2 text-center">
+                            <span>
+                                Dont Have An Account
+                            </span>
+                            <span><a class="signUpAnTag" onclick="prevFunction()">SignUp</a></span>
+                        </div>
+                    </div>
             </div>
+            </form>
         </div>
+    </div>
     </div>
 </body>
 
 </html>
 
 <script>
-  
+    function prevFunction() {
+        let signUpFormDivObj = document.getElementById("signUpFormDiv");
+        let signInFormDivObj = document.getElementById("signInFormDiv");
+        let backButtonObj=document.getElementById("backButton");
+        let nextButtonObj=document.getElementById("nextButton");
+
+        if (signUpFormDivObj.style.display == "none") {
+            signUpFormDivObj.style.display = "block";
+            signInFormDivObj.style.display="none";
+            backButtonObj.style.display="none"
+            nextButtonObj.style.display="block"
+
+        }
+        else {
+            signUpFormDivObj.style.display = "none";
+            signInFormDivObj.style.display="block";
+            backButtonObj.style.display="block"
+            nextButtonObj.style.display="none"
+        }
+    }
     function handleSbmit() {
         let checkboxObj = document.getElementById("checkbox");
         if (checkboxObj.checked) {
