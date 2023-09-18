@@ -1,48 +1,49 @@
-.inputField{
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important
+.inputField {
+  border-radius: 2vw !important;
+  height: 5vw;
+  box-shadow: none !important;
 }
+
+input:focus {
+  border: 1px solid pink !important;
+}
+
 #main-container {
-    height: auto;
-    position: relative;
-    padding-bottom: 56.25%;
+  height: auto;
+  position: relative;
+  padding-bottom: 56.25%;
 }
 
 #main-video {
-    position: absolute;
-    /* top: 0;
-    left: 0; */
-    width: 100%!important;
-    height: 100%!important;
+  object-fit: cover;
+  position: absolute;
+  width: 100% !important;
+  height: 70vw !important;
 }
-.sideBar{
-    float: left;
+
+.sideBar {
+  float: left;
 }
+
 a:link {
-    text-decoration: none;
-    
-    /* text-decoration: underline; */
+  text-decoration: none;
 }
-a:hover {
-    
-}
+
 button {
-  border-radius: 4px;
-  /* background-color: #5ca1e1; */
+
+  border-radius: 2VW !important;
   border: none;
   color: #fff;
   text-align: center;
-  font-size: 32px;
-  padding: 16px;
-  width: 220px;
+  font-size: 4vw;
+  padding: 1.2vw;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 36px;
-  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  height: 5.5vw;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
 }
 
-button{
+button {
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -52,20 +53,67 @@ button{
 button:after {
   content: '»';
   position: absolute;
-  opacity: 0;  
-  right: -20px;
+  opacity: 0;
+  right: -2VW;
   transition: 0.7s;
 }
 
-button:hover{
+button:hover {
   padding-right: 24px;
-  padding-left:8px;
+  padding-left: 8px;
 }
 
 button:hover:after {
   opacity: 1;
   right: 10px;
 }
-.alAcc:hover{
-    font-size: 18px;
- }
+
+.alAcc:hover {
+  font-size: 18px;
+}
+
+.passplac::placeholder {
+  font: 0.7rem/3 sans-serif !important;
+}
+
+a:link {
+  text-decoration: underline;
+  color: black;
+  font-size: 1.5vw;
+  font-weight: 500;
+  border-bottom: 2 px solid black;
+}
+
+.t-c {
+  cursor: pointer !important;
+}
+
+#checkbox,
+#t_c {
+  cursor: pointer;
+}
+
+#checkbox:checked {
+  border: none;
+  background-color: rgb(235, 102, 124);
+}
+
+input[type=checkbox] {
+  /* border: none; */
+  margin: 4px 0 0;
+  line-height: normal;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 600px) {
+  .side-bar{
+    height: 0;
+    width: 0;
+  }
+}
+
+.prevButtton{
+  color: black;
+  width: 5vw;
+}

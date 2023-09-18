@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <div class="container-fluid p-4" style="background-color: whitesmoke;">
+    <div class="container-fluid p-4 bg-light">
         <div class="row">
-            <div class="col-md-4" style="float: left;">
+            <div class="col-md-4 side-bar">
                 <div id="main-container">
                     <video playsinline="" class="auth-sidebar-video" autoplay="" loop="" id="main-video" muted=""
                         src="https://cdn.dribbble.com/uploads/48292/original/30fd1f7b63806eff4db0d4276eb1ac45.mp4?1689187515">
@@ -21,42 +21,47 @@
                 </div>
             </div>
             <div class="col-md-8">
+                
                 <form class="mt-5 p-5">
-                    <div>
-                        <h4>Sign Up Form</h4>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-sm-6">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control inputField" id="name">
+                    <div id="formDiv">
+                        <div>
+                            <h4>Sign Up Form</h4>
                         </div>
-                        <div class="col-sm-6">
-                            <label for="userName">User Name</label>
-                            <input type="text" class="form-control inputField" id="userName">
+                        <div class="row mt-5">
+                            <div class="col-sm-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control inputField" id="name">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="userName">User Name</label>
+                                <input type="text" class="form-control inputField" id="userName">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mt-4">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control inputField" id="email" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mt-4">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control inputField" id="password">
-                    </div>
-                    <div class="form-check mt-5">
-                        <input class="form-check-input" type="checkbox" value="" id="checkbox">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Term & Condition
-                        </label>
-                    </div>
+                        <div class="mt-4">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control inputField" id="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mt-4">
+                            <label for="password">Password</label>
+                            <input placeholder="6+ characters" type="password" class="passplac form-control inputField"
+                                id="password">
+                        </div>
+                        <div class="form-check mt-5 curser-pointer">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox">
+                            <label class="form-check-label" for="checkbox" id="t_c">
+                                Term & Condition
+                            </label>
+                        </div>
 
-                    <div class="mt-5 w-100">
-                        <button onclick="handleSbmit()" class="btn btn-dark w-100">Create Account</button>
-                    </div>
-                    <div class="mt-2">
-                        <span>
-                            <a class="alAcc" href="signIn.html">Alredy have an account?</a>
-                        </span>
+                        <div class="mt-5 w-100">
+                            <button onclick="handleSbmit()" class="btn btn-dark w-100">Create Account</button>
+                        </div>
+                        <div class="mt-2 text-center">
+                            <span>
+                                Alredy have an account?
+                            </span>
+                            <span><a href="sigin.html">SignIn</a></span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -67,6 +72,7 @@
 </html>
 
 <script>
+  
     function handleSbmit() {
         let checkboxObj = document.getElementById("checkbox");
         if (checkboxObj.checked) {
@@ -74,16 +80,15 @@
             let userNameValue = document.getElementById("userName").value;
             let emailValue = document.getElementById("email").value;
             let passwordValue = document.getElementById("password").value;
-
             console.log("Name: " + nameValue);
             console.log("User Name: " + userNameValue);
             console.log("Email: " + emailValue);
             console.log("Password: " + passwordValue);
             alert("account register sucessfully")
         }
-        else{
+        else {
             alert("please checked term & condition")
-           
+
         }
 
     }
